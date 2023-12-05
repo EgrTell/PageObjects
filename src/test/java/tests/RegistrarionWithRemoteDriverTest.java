@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class RegistrarionWithRemoteDriverTest extends TestBaseExtended {
 
@@ -14,8 +15,11 @@ public class RegistrarionWithRemoteDriverTest extends TestBaseExtended {
     @Tag("remote")
     public void inputeValuesAndChekThem () {
 
+        step("Open form", () -> {
         open("https://demoqa.com/automation-practice-form");
+        });
 
+        step("Fill form", () -> {
         $("#firstName").setValue("Egor");
         $("#lastName").setValue("Tellin");
         $("#userEmail").setValue("egor21chuv@yandex.ru");
@@ -37,7 +41,7 @@ public class RegistrarionWithRemoteDriverTest extends TestBaseExtended {
         $("#city").click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
-
+        });
 
     }
 }
