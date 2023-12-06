@@ -13,6 +13,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBaseExtended {
+    RegistrarionPage registrarionPage = new RegistrarionPage();
+
 
 
 
@@ -24,7 +26,6 @@ public class TestBaseExtended {
     static void beforeAll () {
         Configuration.pageLoadTimeout = 1000000;
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = true;
         Configuration.browser = "chrome";
         Configuration.browserVersion = "100.0";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";

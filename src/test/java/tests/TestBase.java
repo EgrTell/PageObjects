@@ -16,7 +16,6 @@ public class TestBase {
     @BeforeAll
     static void beforeAll () {
         Configuration.pageLoadTimeout = 1000000;
-        Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
 
     }

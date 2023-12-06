@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
@@ -11,12 +12,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static utils.RandomUtils.*;
 
-public class RegistrarionWithFakerTests extends TestBase {
+public class RegistrarionWithFakerTests extends TestBaseExtended {
 
     @Test
     public void inputeValuesAndChekThem () {
         Configuration.pageLoadTimeout = 1000000;
-        Configuration.holdBrowserOpen = true;
 
         open("https://demoqa.com/automation-practice-form");
 
@@ -35,6 +35,7 @@ public class RegistrarionWithFakerTests extends TestBase {
 
 
     @Test
+    @Tag("homework")
     public void inputeValuesAndChekThemWithPageObject () {
 
         String [] genders = {"Male", "Female", "Other"};
